@@ -1,0 +1,48 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<!--Adobe Edge Runtime-->
+
+	<script>
+	var custHtmlRoot=""; 
+	var script = document.createElement('script'); 
+	script.type= "text/javascript";
+script.src = custHtmlRoot+"edge_includes/edge.6.0.0.min.js";
+	var head = document.getElementsByTagName('head')[0], done=false;
+	script.onload = script.onreadystatechange = function(){
+		if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+			done=true;
+			var opts ={
+    scaleToFit: "none",
+    centerStage: "none",
+    minW: "0px",
+    maxW: "undefined",
+    width: "undefined",
+    height: "undefined"
+};
+			opts.htmlRoot =custHtmlRoot;
+			AdobeEdge.loadComposition('justabutton', 'EDGE-237389221', opts,
+			{"dom":{}}, {"dom":{}});		
+			script.onload = script.onreadystatechange = null;
+			head.removeChild(script);
+		}
+	};
+	head.appendChild(script);
+	</script>
+	
+	    <style>
+        .edgeLoad-EDGE-237389221 { visibility:hidden; }
+        img { display: block; }
+    </style>
+
+<!--Adobe Edge Runtime End-->
+
+</head>
+
+<body>
+<button onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook (with errcallback)</button>
+
+</body>
+</html>
